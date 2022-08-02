@@ -11,6 +11,60 @@
   <body>
     <div class="body-container">
       <h1>Welcome to the Library</h1>
+
+      <form action="#" method="get">
+        <p>All the fields are required.</p>
+        <label for="form-book-title"
+          >Title:
+          <input
+            type="text"
+            name="form-book-title"
+            id="form-book-title"
+            required
+          />
+        </label>
+        <label for="form-book-author"
+          >Author:
+          <input
+            type="text"
+            name="form-book-author"
+            id="form-book-author"
+            required
+          />
+        </label>
+        <label for="form-book-pages"
+          >Number of pages:
+          <input
+            type="text"
+            name="form-book-pages"
+            id="form-book-pages"
+            required
+          />
+        </label>
+        <p>Is the book read?</p>
+        <label for="form-book-read-state"
+          >Yes
+          <input
+            type="radio"
+            name="form-book-read-state"
+            id="form-book-read-state"
+            value="true"
+            required
+          />
+        </label>
+        <label for="form-book-read-state">
+          No
+          <input
+            type="radio"
+            name="form-book-read-state"
+            id="form-book-read-state"
+            value="false"
+            required
+          />
+        </label>
+        <button type="submit">Add new book</button>
+      </form>
+
       <div class="card-grid">
         <div class="card">
           <h2 class="book-title">The Hobbit</h2>

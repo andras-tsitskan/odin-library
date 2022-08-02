@@ -41,6 +41,11 @@ h1 {
   margin-bottom: var(--marg-padd-gap-large);
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

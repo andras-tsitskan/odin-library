@@ -2,6 +2,8 @@
 
 :root {
   --text-color-main: #27272a;
+  --marg-padd-gap-small: 1rem;
+  --marg-padd-gap-large: 2rem;
 }
 
 * {

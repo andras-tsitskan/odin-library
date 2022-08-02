@@ -55,3 +55,27 @@ h1 {
   background-color: white;
   box-shadow: var(--box-shadow-main);
 }
+
+.card-buttons-div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--marg-padd-gap-small);
+}
+
+.card button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.card button:hover {
+  transform: scale(1.05);
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}

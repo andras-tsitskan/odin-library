@@ -36,6 +36,11 @@ body {
   padding: var(--marg-padd-gap-large);
 }
 
+h1 {
+  text-align: center;
+  margin-bottom: var(--marg-padd-gap-large);
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

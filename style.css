@@ -34,4 +34,17 @@ body {
   margin: 0 auto;
   padding: var(--marg-padd-gap-large);
 }
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: max-content;
+  gap: var(--marg-padd-gap-small);
+}
+
+.card {
+  padding: var(--marg-padd-gap-small);
+  border-radius: 1rem;
+
+  background-color: white;
 }

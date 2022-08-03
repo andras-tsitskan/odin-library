@@ -41,7 +41,7 @@ h1 {
   margin-bottom: var(--marg-padd-gap-large);
 }
 
-.body-container > h2 {
+.card-grid-title {
   margin: var(--marg-padd-gap-small);
 }
 

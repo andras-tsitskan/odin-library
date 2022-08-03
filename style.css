@@ -41,6 +41,10 @@ h1 {
   margin-bottom: var(--marg-padd-gap-large);
 }
 
+.body-container > h2 {
+  margin: var(--marg-padd-gap-small);
+}
+
 form {
   display: flex;
   flex-direction: column;

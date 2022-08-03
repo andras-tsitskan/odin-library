@@ -25,6 +25,7 @@ html {
 
 body {
   min-height: 100%;
+  overflow-y: scroll;
 
   background-color: rgb(211, 211, 211, 0.4);
 }

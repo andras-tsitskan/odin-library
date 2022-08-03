@@ -58,6 +58,8 @@ form {
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
   padding: var(--marg-padd-gap-small);
   border-radius: 1rem;
 
@@ -65,10 +67,14 @@ form {
   box-shadow: var(--box-shadow-main);
 }
 
+.book-read-state {
+  margin-bottom: var(--marg-padd-gap-small);
+}
+
 .card-buttons-div {
   display: flex;
   justify-content: space-between;
-  margin-top: var(--marg-padd-gap-small);
+  margin-top: auto;
 }
 
 .card p,

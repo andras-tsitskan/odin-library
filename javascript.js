@@ -51,6 +51,21 @@ myLibrary.push(book4);
 myLibrary.push(book5);
 myLibrary.push(book6);
 
+myLibrary.forEach((book) => {
+  addInitialBooksToCardGrid(book);
+});
+
+function addInitialBooksToCardGrid(book) {
+  createCard(book);
+
+  createTitleField(book.title);
+  createAuthorField(book.author);
+  createPagesField(book.pages);
+  createReadStateField(book.isRead);
+
+  addChangeReadStateBtn(book);
+  addDeleteBookBtn(book);
+}
 function createCard(book) {
   const newCard = document.createElement("div");
   newCard.classList.add("card");

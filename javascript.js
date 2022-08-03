@@ -97,3 +97,52 @@ function createReadStateField(content) {
   const lastCard = [...document.querySelectorAll(".card")].at(-1);
   lastCard.appendChild(readStateField);
 }
+
+// Change read state buttons and events.
+
+function addChangeReadStateBtn(book) {
+  const buttonsDiv = document.createElement("div");
+  buttonsDiv.classList.add("card-buttons-div", "js-card-buttons-div");
+
+  const changeReadStateBtn = document.createElement("button");
+  if (book.isRead) {
+    changeReadStateBtn.classList.add("red", "js-change-read-state-btn");
+    changeReadStateBtn.textContent = "mark as unread";
+  } else {
+    changeReadStateBtn.classList.add("green", "js-change-read-state-btn");
+    changeReadStateBtn.textContent = "mark as read";
+  }
+  buttonsDiv.appendChild(changeReadStateBtn);
+
+  const lastCard = [...document.querySelectorAll(".card")].at(-1);
+  lastCard.appendChild(buttonsDiv);
+}
+
+const changeReadStateButtons = [
+  ...document.querySelectorAll(".js-change-read-state-btn"),
+];
+
+changeReadStateButtons.forEach((button) => {
+  button.addEventListener("click", changeReadState);
+});
+
+function changeReadState(event) {
+  const card = event.target.parentElement.parentElement;
+  const book = myLibrary[card.dataset.bookId];
+
+  book.isRead = !book.isRead;
+
+  const readStateField = card.querySelector(".js-read-state-field");
+
+  if (book.isRead) {
+    readStateField.textContent = "read";
+    event.target.classList.add("red");
+    event.target.classList.remove("green");
+    event.target.textContent = "mark as unread";
+  } else {
+    readStateField.textContent = "not read";
+    event.target.classList.add("green");
+    event.target.classList.remove("red");
+    event.target.textContent = "mark as read";
+  }
+}

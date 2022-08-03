@@ -146,3 +146,40 @@ function changeReadState(event) {
     event.target.textContent = "mark as read";
   }
 }
+
+// Delete book buttons and events.
+
+function addDeleteBookBtn(book) {
+  const deleteBookBtn = document.createElement("button");
+  deleteBookBtn.classList.add("red", "js-delete-btn");
+  deleteBookBtn.textContent = "delete book";
+
+  const lastCard = [...document.querySelectorAll(".card")].at(-1);
+  const buttonsDiv = lastCard.querySelector(".js-card-buttons-div");
+
+  buttonsDiv.appendChild(deleteBookBtn);
+}
+
+const deleteBookButtons = [...document.querySelectorAll(".js-delete-btn")];
+
+deleteBookButtons.forEach((button) => {
+  button.addEventListener("click", deleteBook);
+});
+
+function deleteBook(event) {
+  const card = event.target.parentElement.parentElement;
+  card.remove();
+
+  const book = myLibrary[card.dataset.bookId];
+  const bookIndex = myLibrary.indexOf(book);
+  myLibrary.splice(bookIndex, 1);
+
+  updateHTMLBookIds();
+}
+
+function updateHTMLBookIds() {
+  const cards = [...document.querySelectorAll(".card")];
+  cards.forEach((card, index) => {
+    card.dataset.bookId = index;
+  });
+}

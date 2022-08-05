@@ -5,6 +5,7 @@
   --box-shadow-main: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   --marg-padd-gap-small: 1rem;
   --marg-padd-gap-large: 2rem;
+  --footer-height: 50px;
 }
 
 * {
@@ -24,6 +25,7 @@ html {
 }
 
 body {
+  position: relative;
   min-height: 100%;
   overflow-y: scroll;
 
@@ -106,7 +108,8 @@ h1 {
 .add-book-btn {
   display: block;
   width: max-content;
-  margin: var(--marg-padd-gap-large) 0;
+  margin-top: var(--marg-padd-gap-large);
+  margin-bottom: var(--footer-height);
   padding: calc(var(--marg-padd-gap-small) / 2) var(--marg-padd-gap-small);
 
   font-size: 1.2rem;
@@ -220,13 +223,15 @@ form button:hover {
 /* FOOTER */
 
 footer {
+  height: var(--footer-height);
   width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: var(--marg-padd-gap-small);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  text-align: center;
   background-color: white;
 }
 

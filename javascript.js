@@ -172,15 +172,9 @@ function addChangeReadStateBtn(book) {
 
   const lastCard = [...document.querySelectorAll(".card")].at(-1);
   lastCard.appendChild(buttonsDiv);
+
+  changeReadStateBtn.addEventListener("click", changeReadState);
 }
-
-const changeReadStateButtons = [
-  ...document.querySelectorAll(".js-change-read-state-btn"),
-];
-
-changeReadStateButtons.forEach((button) => {
-  button.addEventListener("click", changeReadState);
-});
 
 function changeReadState(event) {
   const card = event.target.parentElement.parentElement;
@@ -214,13 +208,9 @@ function addDeleteBookBtn(book) {
   const buttonsDiv = lastCard.querySelector(".js-card-buttons-div");
 
   buttonsDiv.appendChild(deleteBookBtn);
+
+  deleteBookBtn.addEventListener("click", deleteBook);
 }
-
-const deleteBookButtons = [...document.querySelectorAll(".js-delete-btn")];
-
-deleteBookButtons.forEach((button) => {
-  button.addEventListener("click", deleteBook);
-});
 
 function deleteBook(event) {
   const card = event.target.parentElement.parentElement;

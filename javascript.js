@@ -108,9 +108,7 @@ function afterSuccessfulSubmit() {
 
 // Functions for displaying an added book on website.
 
-function addBookToCardGrid() {
-  const newBook = myLibrary.at(-1);
-
+function addBookToCardGrid(newBook) {
   createCard(newBook);
 
   createTitleField(newBook.title);
@@ -119,6 +117,7 @@ function addBookToCardGrid() {
   createReadStateField(newBook.isRead);
 
   addChangeReadStateBtn(newBook);
+
   addDeleteBookBtn(newBook);
 }
 

@@ -139,7 +139,8 @@ h1 {
   opacity: 1;
 }
 
-.modal-container:target ~ .body-container {
+.modal-container:target ~ .body-container,
+.modal-container:target ~ footer {
   filter: blur(10px);
 }
 
@@ -212,4 +213,25 @@ form button:hover {
 
 .modal-close-btn:hover {
   transform: scale(1.05);
+}
+
+/* FOOTER */
+
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: var(--marg-padd-gap-small);
+
+  text-align: center;
+  background-color: white;
+}
+
+footer a {
+  background-color: rgb(211, 211, 211, 0.4);
+}
+
+footer a:hover {
+  background-color: gold;
 }

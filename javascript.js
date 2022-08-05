@@ -52,20 +52,8 @@ myLibrary.push(book5);
 myLibrary.push(book6);
 
 myLibrary.forEach((book) => {
-  addInitialBooksToCardGrid(book);
+  addBookToCardGrid(book);
 });
-
-function addInitialBooksToCardGrid(book) {
-  createCard(book);
-
-  createTitleField(book.title);
-  createAuthorField(book.author);
-  createPagesField(book.pages);
-  createReadStateField(book.isRead);
-
-  addChangeReadStateBtn(book);
-  addDeleteBookBtn(book);
-}
 
 // Add a book functionality.
 

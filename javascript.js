@@ -66,6 +66,62 @@ function addInitialBooksToCardGrid(book) {
   addChangeReadStateBtn(book);
   addDeleteBookBtn(book);
 }
+
+// Add a book functionality.
+
+const form = document.querySelector("form");
+
+form.addEventListener("submit", addBookToLibrary);
+
+function addBookToLibrary(event) {
+  event.preventDefault();
+
+  const formTitleValue = document.querySelector("#form-book-title").value;
+  const formAuthorValue = document.querySelector("#form-book-author").value;
+
+  const formPagesValue = document.querySelector("#form-book-pages").value;
+
+  const formReadStateValue = document.querySelector(
+    "#form-book-read-state"
+  ).checked;
+
+  const newBook = new Book(
+    formTitleValue,
+    formAuthorValue,
+    formPagesValue,
+    formReadStateValue
+  );
+  myLibrary.push(newBook);
+
+  addBookToCardGrid();
+
+  afterSuccessfulSubmit();
+}
+
+function afterSuccessfulSubmit() {
+  const form = document.querySelector("form");
+  form.reset();
+
+  const modalCloseBtn = document.querySelector(".js-modal-close-btn");
+  modalCloseBtn.click();
+}
+
+// Functions for displaying an added book on website.
+
+function addBookToCardGrid() {
+  const newBook = myLibrary.at(-1);
+
+  createCard(newBook);
+
+  createTitleField(newBook.title);
+  createAuthorField(newBook.author);
+  createPagesField(newBook.pages);
+  createReadStateField(newBook.isRead);
+
+  addChangeReadStateBtn(newBook);
+  addDeleteBookBtn(newBook);
+}
+
 function createCard(book) {
   const newCard = document.createElement("div");
   newCard.classList.add("card");

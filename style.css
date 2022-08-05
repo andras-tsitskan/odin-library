@@ -45,11 +45,6 @@ h1 {
   margin: var(--marg-padd-gap-small);
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-}
-
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -118,6 +113,98 @@ form {
 }
 
 .add-book-btn:hover {
+/* MODAL, FORM */
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+
+  visibility: hidden;
+  opacity: 0;
+  box-shadow: var(--box-shadow-main);
+}
+
+.modal-container:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-container:target ~ .body-container {
+  filter: blur(10px);
+}
+
+.modal {
+  width: 40vw;
+  margin: auto;
+  padding: var(--marg-padd-gap-large);
+  position: relative;
+
+  background-color: white;
+  border-radius: var(--marg-padd-gap-small);
+  border: 2px solid black;
+}
+
+.modal-header {
+  margin-bottom: var(--marg-padd-gap-small);
+
+  text-align: center;
+}
+
+.form-instruction {
+  font-size: 0.8rem;
+  margin: var(--marg-padd-gap-small) 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form li {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 1ch;
+  align-items: center;
+  margin-bottom: 1ch;
+}
+
+form label {
+  text-align: right;
+}
+
+form input {
+  padding: 5px;
+}
+
+form input[type="checkbox"] {
+  justify-self: start;
+}
+
+form button {
+  grid-column: 2;
+  width: max-content;
+  padding: 5px var(--marg-padd-gap-small);
+
   background-color: gold;
+}
+
+form button:hover {
+  transform: scale(1.05);
+
   cursor: pointer;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: var(--marg-padd-gap-small);
+  right: var(--marg-padd-gap-small);
+}
+
+.modal-close-btn:hover {
+  transform: scale(1.05);
 }

@@ -66,9 +66,7 @@ function addBookToLibrary(event) {
 
   const formTitleValue = document.querySelector("#form-book-title").value;
   const formAuthorValue = document.querySelector("#form-book-author").value;
-
   const formPagesValue = document.querySelector("#form-book-pages").value;
-
   const formReadStateValue = document.querySelector(
     "#form-book-read-state"
   ).checked;
@@ -81,7 +79,7 @@ function addBookToLibrary(event) {
   );
   myLibrary.push(newBook);
 
-  addBookToCardGrid();
+  addBookToCardGrid(newBook);
 
   afterSuccessfulSubmit();
 }

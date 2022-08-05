@@ -102,17 +102,22 @@ h1 {
 }
 
 .add-book-btn {
+  display: block;
   width: max-content;
-  margin-top: var(--marg-padd-gap-large);
+  margin: var(--marg-padd-gap-large) 0;
   padding: calc(var(--marg-padd-gap-small) / 2) var(--marg-padd-gap-small);
 
   font-size: 1.2rem;
-  background-color: white;
+  background-color: gold;
+
   border-radius: var(--marg-padd-gap-small);
   box-shadow: var(--box-shadow-main);
 }
 
 .add-book-btn:hover {
+  transform: scale(1.05);
+}
+
 /* MODAL, FORM */
 
 .modal-container {
